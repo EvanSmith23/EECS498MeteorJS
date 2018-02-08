@@ -1,0 +1,44 @@
+body, div {
+	margin : 0;
+	padding : 0;
+}
+
+button, .button {
+	border : 1px outset;
+	background-color : #BBBBBB;
+	padding: 4px;
+	margin : 2px;
+}
+
+/* Start of Class Style */
+
+
+.underline { text-decoration : underline; }
+
+
+/* Start of ID Style */
+
+#buttons { 		display : inline-block;	}
+#header { 		font-size : 35px;	}
+#inline_As {	display : inline-block;	}
+#container {
+	border :3px black outset;
+	padding-left : 5px;
+}
+#box {
+	text-decoration: none;
+	border-width : 2px;
+	border-style: solid;
+	text-align : center;
+	padding : 1px;
+}
+#blue { 	color : blue;	}
+#gray {		color : gray;	}
+#green { 	color : green; 	}
+#red { 		color : red; 	}
+#blue, #green, #red {
+	text-decoration : none;
+	margin : 3px;
+	font-size : 20px;
+}
+
