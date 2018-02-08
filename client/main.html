@@ -3,4 +3,15 @@
 </head>
 <body>
     <div id="render-target"></div>
+    {{> formTemplate }}
 </body>
+
+<template name="formTemplate">
+      <form ref="formInput">
+          <input 
+              type="text" 
+              ref="textInput" />
+      </form>
+      <br/><br/>
+      <button ref="clearAllText" onClick={this.renderClearAllText.bind(this)} >Clear All Text</button>
+</template>

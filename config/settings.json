@@ -1,0 +1,9 @@
+{
+  "galaxy.meteor.com" : {},
+  "public" : {
+    "persistent_session" : {
+      "default_method" : "persistent"
+    }
+  },
+  "private" : {}
+}

@@ -10,17 +10,18 @@ var underline = false;
 var box = false;
 var color = '';
 
-class App extends Component {
-
-
-	addListener(event) {
-
-		console.log("addListener is called");
-
-	    ReactDOM.findDOMNode(this.refs.container).addEventListener("keydown", function(){
-	    	console.log("keydown");
-	    });
+Template.formTemplate.events({
+	
+	'keydown'(event){
+		if(event.which == 13 || event.which == 32){
+			event.preventDefault();
+			handleSubmit(event);
+		}
 	}
+});
+
+
+class App extends Component {
 
 	renderBold(event){
 
@@ -142,7 +143,7 @@ class App extends Component {
 	render() {
 
 	    return (
-	    	<div ref="container" id="container" onLoad={this.addListener.bind(this)}>
+	    	<div ref="container" id="container">
 		      	<p id="header"><b>Welcome to MeteorEditor 1.0!</b></p>
 		      	<div>
 		        	<button ref="bold" id="bold" onClick={this.renderBold.bind(this)} >Bold</button>
@@ -156,7 +157,6 @@ class App extends Component {
 		        	<a href="#" onClick={this.renderGreen.bind(this)} id="green" ref="green">A</a> 
 		        	<a href="#" onClick={this.renderBlue.bind(this)} id="blue" ref="blue">A</a>
 		      	</div>
-
 		      	<p>Current status:  
 		      		<span id="gray" ref="activeDefault"> no font effects active</span>
 		      		<span ref="activeBold"></span>
@@ -167,19 +167,17 @@ class App extends Component {
 		      	</p>
 		      	<br/><br/>
 		      	<p ref="textField"></p>
-				<form onSubmit={this.handleSubmit.bind(this)} >
-				    <input 
-				        type="text" 
-				        ref="textInput" />
-				</form>
-		      	<br/><br/>
-		      	<button ref="clearAllText" onClick={this.renderClearAllText.bind(this)} >Clear All Text</button>
+		      	<form id="formInput" ref="formInput" onSubmit={this.handleSubmit.bind(this)}>
+			        <input 
+			            type="text" 
+			            ref="textInput" />
+			    </form>
+			    <br/><br/>
+			    <button ref="clearAllText" onClick={this.renderClearAllText.bind(this)} >Clear All Text</button>
+  	      		<br/><br/>
 		    </div>
-
 	    );
-	}
-
-	
+	}	
 }
 
 export default withTracker(() => {

@@ -21,7 +21,7 @@ button, .button {
 #buttons { 		display : inline-block;	}
 #header { 		font-size : 35px;	}
 #inline_As {	display : inline-block;	}
-#container {
+#render_target {
 	border :3px black outset;
 	padding-left : 5px;
 }
