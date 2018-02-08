@@ -2,16 +2,19 @@
   <title>MeteorEditor</title>
 </head>
 <body>
-    <div id="render-target"></div>
-    {{> formTemplate }}
+	<div ref="container" id="container">
+	    <div id="render-target"></div>
+	    {{> formTemplate }}
+	</div>
 </body>
 
 <template name="formTemplate">
-      <form ref="formInput">
-          <input 
-              type="text" 
-              ref="textInput" />
-      </form>
-      <br/><br/>
-      <button ref="clearAllText" onClick={this.renderClearAllText.bind(this)} >Clear All Text</button>
+    <form id="formInput" ref="formInput" onSubmit={this.handleSubmit.bind(this)}>
+			<input 
+			    type="text" 
+			    ref="textInput" />
+	</form>
+	<br/><br/>
+	<button ref="clearAllText" onClick={this.renderClearAllText.bind(this)} >Clear All Text</button>
+  	<br/><br/>
 </template>

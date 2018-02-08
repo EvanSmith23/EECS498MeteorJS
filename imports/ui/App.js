@@ -9,6 +9,7 @@ var italic = false;
 var underline = false;
 var box = false;
 var color = '';
+var myData = {};
 
 Template.formTemplate.events({
 	
@@ -143,7 +144,7 @@ class App extends Component {
 	render() {
 
 	    return (
-	    	<div ref="container" id="container">
+	    	<div ref="main" id="main">
 		      	<p id="header"><b>Welcome to MeteorEditor 1.0!</b></p>
 		      	<div>
 		        	<button ref="bold" id="bold" onClick={this.renderBold.bind(this)} >Bold</button>
@@ -167,14 +168,8 @@ class App extends Component {
 		      	</p>
 		      	<br/><br/>
 		      	<p ref="textField"></p>
-		      	<form id="formInput" ref="formInput" onSubmit={this.handleSubmit.bind(this)}>
-			        <input 
-			            type="text" 
-			            ref="textInput" />
-			    </form>
 			    <br/><br/>
-			    <button ref="clearAllText" onClick={this.renderClearAllText.bind(this)} >Clear All Text</button>
-  	      		<br/><br/>
+			    
 		    </div>
 	    );
 	}	
