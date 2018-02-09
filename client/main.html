@@ -2,19 +2,45 @@
   <title>MeteorEditor</title>
 </head>
 <body>
-	<div ref="container" id="container">
-	    <div id="render-target"></div>
-	    {{> formTemplate }}
-	</div>
+	<div id="render-target"></div>
+	{{> container }}
 </body>
 
-<template name="formTemplate">
-    <form id="formInput" ref="formInput" onSubmit={this.handleSubmit.bind(this)}>
-			<input 
-			    type="text" 
-			    ref="textInput" />
-	</form>
-	<br/><br/>
-	<button ref="clearAllText" onClick={this.renderClearAllText.bind(this)} >Clear All Text</button>
-  	<br/><br/>
+<template name="container">
+	<div ref="main" id="main">
+		      	<p id="header"><b>Welcome to MeteorEditor 1.0!</b></p>
+		      	<div>
+		        	<button ref="bold" id="bold">Bold</button>
+		        	<button ref="italic" id="italic">Italic</button>
+		        	<button ref="underline" id="underline">Underline</button>
+		      	</div>
+		      	<br/>
+		      	<div id="inline_As">
+		        	<a href="#" id="box" ref="box">A</a>
+		        	<a href="#" id="red" ref="red">A</a> 
+		        	<a href="#" id="green" ref="green">A</a> 
+		        	<a href="#" id="blue" ref="blue">A</a>
+		      	</div>
+		      	<p>Current status:  
+		      		<span id="activeDefault" ref="activeDefault"> no font effects active</span>
+		      		<span id="activeBold" ref="activeBold"></span>
+		      		<span id="activeItalic" ref="activeItalic"></span>
+		      		<span id="activeUnderline" ref="activeUnderline"></span>
+		      		<span id="activeBox" ref="activeBox"></span>
+		      		<span id="activeColor" ref="activeColor"></span>
+		      	</p>
+		      	<br/><br/>
+		      	<p id="textField" ref="textField"></p>
+		      	<br/><br/>
+		      	<form id="formInput" ref="formInput">
+					<input 
+						type="text" 
+						id="textInput"
+						ref="textInput" />
+				</form>
+				<br/><br/>
+				<button id="clearAllText" ref="clearAllText">Clear All Text</button>
+				<br/><br/>
+					      	
+	</div>
 </template>

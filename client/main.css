@@ -33,7 +33,7 @@ button, .button {
 	padding : 1px;
 }
 #blue { 	color : blue;	}
-#gray {		color : gray;	}
+#activeDefault {		color : gray;	}
 #green { 	color : green; 	}
 #red { 		color : red; 	}
 #blue, #green, #red {
