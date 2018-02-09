@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import React, { Component } from 'react';
+import { Session } from 'meteor/session';
 import { withTracker } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
 //import Task from './Task.js';
@@ -9,7 +10,6 @@ var italic = false;
 var underline = false;
 var box = false;
 var color = '';
-var myData = {};
 
 Template.container.events({
 	
@@ -82,6 +82,7 @@ Template.container.events({
 		}
 		if(underline){ 	underline = false; } 
 		else { 			underline = true; }
+
 	},
 	'click #box' : function(event){
 		document.getElementById("activeDefault").innerHTML  = " ";
@@ -96,17 +97,17 @@ Template.container.events({
 	},
 	'click #blue' :  function(event){
 		document.getElementById("activeDefault").innerHTML  = " ";
-		document.getElementById("activeColor").innerHTML = "blue ";
+		document.getElementById("activeColor").innerHTML = "Blue ";
 		color = "color:blue;";
 	},
 	'click #green' :  function(event){
 		document.getElementById("activeDefault").innerHTML  = " ";
-		document.getElementById("activeColor").innerHTML = "green ";
+		document.getElementById("activeColor").innerHTML = "Green ";
 		color = "color:green;";
 	},
 	'click #red' :  function(event){
 		document.getElementById("activeDefault").innerHTML  = " ";
-		document.getElementById("activeColor").innerHTML = "red ";
+		document.getElementById("activeColor").innerHTML = "Red ";
 		color = "color:red;";
 	},
 	'click #clearAllText' : function(event){

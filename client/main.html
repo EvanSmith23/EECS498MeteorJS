@@ -6,7 +6,7 @@
 	{{> container }}
 </body>
 
-<template name="container">
+<template id="container" name="container">
 	<div ref="main" id="main">
 		      	<p id="header"><b>Welcome to MeteorEditor 1.0!</b></p>
 		      	<div>
@@ -21,13 +21,15 @@
 		        	<a href="#" id="green" ref="green">A</a> 
 		        	<a href="#" id="blue" ref="blue">A</a>
 		      	</div>
-		      	<p>Current status:  
-		      		<span id="activeDefault" ref="activeDefault"> no font effects active</span>
-		      		<span id="activeBold" ref="activeBold"></span>
-		      		<span id="activeItalic" ref="activeItalic"></span>
-		      		<span id="activeUnderline" ref="activeUnderline"></span>
-		      		<span id="activeBox" ref="activeBox"></span>
-		      		<span id="activeColor" ref="activeColor"></span>
+		      	<p>Current status:
+		      		<span id="activeStyle">  
+			      	<span id="activeDefault" ref="activeDefault"> no font effects active</span>
+			      	<span id="activeBold" ref="activeBold"></span>
+			      	<span id="activeItalic" ref="activeItalic"></span>
+			      	<span id="activeUnderline" ref="activeUnderline"></span>
+			      	<span id="activeBox" ref="activeBox"></span>
+			      	<span id="activeColor" ref="activeColor"></span>
+			      	</span>
 		      	</p>
 		      	<br/><br/>
 		      	<p id="textField" ref="textField"></p>
